@@ -1,0 +1,28 @@
+version: '2'
+services:
+  app_php:
+    image: php:7.0
+    command: php -S 0.0.0.0:8080 -t /var/www/web
+    volumes:
+      - ".:/var/www"
+    ports:
+      - 8080:8080
+
+#  app_apache:
+#    build: docker/app_apache
+#    volumes:
+#      - ".:/var/www/html"
+#    ports:
+#      - 8081:8081
+#    depends_on:
+#      - database
+
+#  database:
+#    image: percona:5.7
+#    environment:
+#      MYSQL_ROOT_PASSWORD: MuchSecret
+#      MYSQL_DATABASE: symfony_demo
+#      MYSQL_USER: symfony_demo
+#      MYSQL_PASSWORD: symfony_demo
+#    ports:
+#      - 13306:3306
